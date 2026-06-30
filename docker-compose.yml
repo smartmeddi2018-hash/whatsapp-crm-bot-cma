@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - WHATSAPP_BUSINESS_ACCOUNT_ID=${WHATSAPP_BUSINESS_ACCOUNT_ID}
+      - WHATSAPP_PHONE_NUMBER_ID=${WHATSAPP_PHONE_NUMBER_ID}
+      - WHATSAPP_API_TOKEN=${WHATSAPP_API_TOKEN}
+      - WHATSAPP_WEBHOOK_VERIFY_TOKEN=${WHATSAPP_WEBHOOK_VERIFY_TOKEN}
+      - CRM_SERIAL=${CRM_SERIAL}
+      - CRM_EMPRESA=${CRM_EMPRESA}
+      - CRM_BASE_URL=${CRM_BASE_URL}
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
