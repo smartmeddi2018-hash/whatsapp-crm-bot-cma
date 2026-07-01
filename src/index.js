@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rotas
+app.use('/webhook', whatsappRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
 app.use('/api/crm', crmRoutes);
 
