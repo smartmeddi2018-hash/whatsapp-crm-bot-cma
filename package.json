@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Bot de agendamento via WhatsApp integrado ao CRM PriorizesenhaS",
   "main": "src/index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "heroku-postbuild": "npm install"
   },
   "keywords": [
     "whatsapp",
